@@ -7,7 +7,7 @@ command: iortcw.sh
 finish-args:
 - --device=dri
 - --socket=wayland
-- --socket=x11
+- --socket=fallback-x11
 - --share=ipc
 - --share=network
 - --socket=pulseaudio
@@ -27,8 +27,8 @@ modules:
   buildsystem: simple
   build-commands:
    # For historic reasons, single- and multiplayer are different binaries
-   - cd /run/build/iortcw-source/SP/ && BUILD_GAME_QVM=1 COPYDIR=/app/bin/ make copyfiles
-   - cd /run/build/iortcw-source/MP/ && BUILD_GAME_QVM=1 COPYDIR=/app/bin/ make copyfiles
+   - cd /run/build/iortcw-source/SP/ && USE_INTERNAL_LIBS=0 COPYDIR=/app/bin/ make -j${FLATPAK_BUILDER_N_JOBS} copyfiles
+   - cd /run/build/iortcw-source/MP/ && USE_INTERNAL_LIBS=0 COPYDIR=/app/bin/ make -j${FLATPAK_BUILDER_N_JOBS} copyfiles
   sources:
   - type: archive
     url: https://github.com/iortcw/iortcw/archive/1.51c.tar.gz
@@ -77,5 +77,4 @@ modules:
   - install -Dm 644 com.github.iortcw.iortcw.metainfo.xml -t /app/share/metainfo
   - install -Dm 644 com.github.iortcw.iortcw.png -t /app/share/icons/hicolor/128x128/apps/
   - install -Dm 644 com.github.iortcw.iortcw.svg -t /app/share/icons/hicolor/scalable/apps/
-
 
