@@ -49,16 +49,35 @@ modules:
 - name: launcher
   buildsystem: simple
   sources:
-    # singleplayer
+  # singleplayer x86_64
   - type: script
     dest-filename: iortcw.sh
+    only-arches:
+    - x86_64
     commands:
     - /app/bin/iowolfsp.x86_64 +set fs_homepath ~/.var/app/com.github.iortcw.iortcw "$@"
-    # multiplayer
+  # multiplayer x86_64
   - type: script
     dest-filename: iortcw_mp.sh
+    only-arches:
+    - x86_64
     commands:
     - /app/bin/iowolfmp.x86_64 +set fs_homepath ~/.var/app/com.github.iortcw.iortcw "$@"
+  # singleplayer aarch64
+  - type: script
+    dest-filename: iortcw.sh
+    only-arches:
+    - aarch64
+    commands:
+    - /app/bin/iowolfsp.aarch64 +set fs_homepath ~/.var/app/com.github.iortcw.iortcw "$@"
+  # multiplayer aarch64
+  - type: script
+    dest-filename: iortcw_mp.sh
+    only-arches:
+    - aarch64
+    commands:
+    - /app/bin/iowolfmp.aarch64 +set fs_homepath ~/.var/app/com.github.iortcw.iortcw "$@"
+  # Other resources
   - type: file
     path: com.github.iortcw.iortcw.desktop
   - type: file
