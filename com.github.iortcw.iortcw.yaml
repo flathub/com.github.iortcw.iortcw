@@ -36,6 +36,8 @@ modules:
           type: anitya
           project-id: 16908
           url-template: https://github.com/iortcw/iortcw/archive/$version.tar.gz
+      - type: patch
+        path: fix-build-errors.patch
 
   - name: iortcw-assets
     buildsystem: simple
