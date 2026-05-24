@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2019 Kevin Degeling -->
-
-<component type="desktop">
+<component type="desktop-application">
   <id>com.github.iortcw.iortcw</id>
-  <name>IO Return to Castle Wolfenstein</name>
-  <summary>Game engine for Return to Castle Wolfenstein</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0</project_license>
-
+  <name>IO Return to Castle Wolfenstein</name>
+  <summary>Game engine for Return to Castle Wolfenstein</summary>
   <developer id="com.github.iortcw">
     <name>IO RTCW Team</name>
   </developer>
-
   <update_contact>contact@kevindegeling.nl</update_contact>
-
   <url type="homepage">https://github.com/iortcw/iortcw</url>
-
+  <url type="bugtracker">https://github.com/iortcw/iortcw/issues</url>
+  <url type="vcs-browser">https://github.com/iortcw/iortcw</url>
   <launchable type="desktop-id">com.github.iortcw.iortcw.desktop</launchable>
 
   <description>
-    <p>World War II rages and nations fall. SS head Himmler has Hitler's full backing to twist science and the occult into an army capable of annihilating the Allies once and for all. Battling alone, you're on an intense mission to pierce the black heart of the Third Reich and stop Himmler -- or die trying.
+    <p>World War II rages and nations fall. SS head Himmler has Hitler's full backing
+      to twist science and the occult into an army capable of annihilating the Allies
+      once and for all. Battling alone, you're on an intense mission to pierce the black
+      heart of the Third Reich and stop Himmler -- or die trying.
     </p>
-    <p>The intent of this project is to provide a baseline RTCW which may be used for further development and fun. The map editor and associated compiling tools are not included. We suggest you use a modern copy of GtkRadiant. Some of the major features currently implemented are:
+    <p>The intent of this project is to provide a baseline RTCW which may be used for
+      further development and fun. The map editor and associated compiling tools are not
+      included. We suggest you use a modern copy of GtkRadiant. Some of the major
+      features currently implemented are:
     </p>
     <ul>
       <li>SDL backend</li>
@@ -34,7 +37,8 @@
       <li>Many, many bug fixes</li>
     </ul>
     <p>
-     Commercial data files are required to run the supported games. These can be aquired though a multitude of sources. See the manual for more info on this.
+     Commercial data files are required to run the supported games. These can be aquired though
+     a multitude of sources. See the manual for more info on this.
     </p>
   </description>
 
