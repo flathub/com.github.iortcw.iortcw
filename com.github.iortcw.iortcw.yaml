@@ -1,7 +1,7 @@
 app-id: com.github.iortcw.iortcw
 runtime: org.freedesktop.Platform
 sdk: org.freedesktop.Sdk
-runtime-version: '24.08'
+runtime-version: '25.08'
 command: iortcw.sh
 
 finish-args:
@@ -13,10 +13,10 @@ finish-args:
   - --socket=pulseaudio
 
 cleanup:
-  - /app/include
-  - /app/lib/*.a
-  - /app/lib/*.la
-  - /app/lib/pkgconfig
+  - /include
+  - /lib/pkgconfig
+  - '*.la'
+  - '*.a'
 
 modules:
   # Upsteam has been poked about integrating FreeDesktop components
@@ -55,6 +55,14 @@ modules:
 
   - name: launcher
     buildsystem: simple
+    build-commands:
+      - install -Dm 744 iortcw.sh -t /app/bin
+      - install -Dm 744 iortcw_mp.sh -t /app/bin
+      - install -Dm 644 com.github.iortcw.iortcw.desktop -t /app/share/applications/
+      - install -Dm 644 com.github.iortcw.iortcw.mp.desktop -t /app/share/applications/
+      - install -Dm 644 com.github.iortcw.iortcw.metainfo.xml -t /app/share/metainfo/
+      - install -Dm 644 com.github.iortcw.iortcw.png -t /app/share/icons/hicolor/128x128/apps/
+      - install -Dm 644 com.github.iortcw.iortcw.svg -t /app/share/icons/hicolor/scalable/apps/
     sources:
       # singleplayer x86_64
       - type: script
@@ -95,12 +103,3 @@ modules:
         path: com.github.iortcw.iortcw.svg
       - type: file
         path: com.github.iortcw.iortcw.png
-    build-commands:
-      - install -Dm 744 iortcw.sh -t /app/bin
-      - install -Dm 744 iortcw_mp.sh -t /app/bin
-      - install -Dm 644 com.github.iortcw.iortcw.desktop -t /app/share/applications
-      - install -Dm 644 com.github.iortcw.iortcw.mp.desktop -t /app/share/applications
-      - install -Dm 644 com.github.iortcw.iortcw.metainfo.xml -t /app/share/metainfo
-      - install -Dm 644 com.github.iortcw.iortcw.png -t /app/share/icons/hicolor/128x128/apps/
-      - install -Dm 644 com.github.iortcw.iortcw.svg -t /app/share/icons/hicolor/scalable/apps/
-
